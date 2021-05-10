@@ -1,6 +1,6 @@
 {
   "name": "animon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Animate DOM elements when the appear in the viewport",
   "main": "dist/animon.cjs.js",
   "module": "dist/animon.esm.js",
