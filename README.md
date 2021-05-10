@@ -18,8 +18,8 @@ yarn add animon
 
 Add animon styles from a CDN:
 
-```
-@TODO
+```html
+<link rel="stylesheet" href="https://unpkg.com/animon@1.0.1/dist/animon.css"/>
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ Add animon styles from a CDN:
 #### As an ES module
 
 ```js
-import { animon } from '<path-to>/animon.esm.js';
+import { animon } from 'https://unpkg.com/animon@1.0.1/dist/animon.esm.js';
 
 // Initialize it with default selector
 animon();
@@ -40,10 +40,12 @@ animon('h1');
 
 #### With webpack
 
+@TODO
+
 #### As an IIFE
 
 ```html
-<script type="text/javascript" src="<path-to>/animon.iife.js"></script>
+<script type="text/javascript" src="https://unpkg.com/animon@1.0.1/dist/animon.iife.js"></script>
 <script type="text/javascript">
   Animon.animon();
 </script>
