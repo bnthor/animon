@@ -1,6 +1,6 @@
 # Animon
 
-A simple way to animate DOM elements when they enter the viewport.
+A simple way to animate DOM elements when they enter the viewport. [See the demo](https://bnthor.github.io/animon/)
 
 ## Installation
 
@@ -29,6 +29,9 @@ Add animon styles from a CDN:
 #### As an ES module
 
 ```js
+// From node_modules
+import { animon } from 'animon/dist/animon.esm.js';
+// OR from a CDN
 import { animon } from 'https://unpkg.com/animon@1.0.1/dist/animon.esm.js';
 
 // Initialize it with default selector
@@ -37,10 +40,6 @@ animon();
 // Or with a custom selector
 animon('h1');
 ```
-
-#### With webpack
-
-@TODO
 
 #### As an IIFE
 
@@ -62,7 +61,7 @@ Animon will detect all elements that has a 'animonItem' classname, for example:
 </section>
 ```
 
-In addition, animon also detects two data-attributes that gives you more control:
+In addition, animon also detects three data-attributes that gives you more control:
 
 #### Data-effect
 
@@ -72,10 +71,28 @@ This is the easing function that will be used on the element entrance:
 <h1 class="animonItem" data-effect="fadeInUp">Hey yah!</h1>
 ```
 
+There's a few effects available at the moment:
+
+- fadeIn
+- fadeInLeft (default)
+- fadeInRight
+- fadeInDown
+- fadeInUp
+- scaleUp
+- scaleDown
+
 #### Data-delay
 
 Delays the entrace by `x` milliseconds:
 
 ```html
 <h1 class="animonItem" data-delay="800">
+```
+
+#### Data-duration
+
+The transition duration, it must be expressed as a CSS "transition-duration" value (120ms, 2s etc...).
+
+```html
+<h1 class="animonItem" data-duration="4s">
 ```
