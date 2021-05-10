@@ -5,7 +5,8 @@
   "main": "dist/animon.cjs.js",
   "module": "dist/animon.esm.js",
   "scripts": {
-    "build": "postcss src/animon.pcss -o dist/animon.css && rollup -c"
+    "build": "postcss src/animon.pcss -o dist/animon.css && rollup -c",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "animation",
@@ -43,5 +44,6 @@
   },
   "bugs": {
     "url": "https://github.com/bnthor/animon/issues"
-  }
+  },
+  "homepage": "https://github.com/bnthor/animon/",
 }
