@@ -1,0 +1,69 @@
+/* Default effect is fadeInLeft */
+.animonItem {
+    opacity: 0;
+    will-change: opacity, transform;
+    transform: translateX(-4rem);
+    transform-origin: 0 0;
+    transition:
+        opacity 640ms 400ms cubic-bezier(0.5, 1, 0.89, 1),
+        transform 640ms 400ms cubic-bezier(0.5, 1, 0.89, 1);
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* FadeIn effect */
+.animonItem[data-effect="fadeIn"] {
+    transform: none;
+
+    &.is-visible {
+        transform: none;
+    }
+}
+
+/* FadeInRight effect */
+.animonItem[data-effect="fadeInRight"] {
+    transform: translateX(4rem);
+
+    &.is-visible {
+        transform: translateX(0);
+    }
+}
+
+/* FadeInDown effect */
+.animonItem[data-effect="fadeInDown"] {
+    transform: translateY(-4rem);
+
+    &.is-visible {
+        transform: translateY(0);
+    }
+}
+
+/* FadeInUp effect */
+.animonItem[data-effect="fadeInUp"] {
+    transform: translateY(4rem);
+
+    &.is-visible {
+        transform: translateY(0);
+    }
+}
+
+/* ScaleUp effect */
+.animonItem[data-effect="scaleUp"] {
+    transform: scale(.8);
+
+    &.is-visible {
+        transform: scale(1);
+    }
+}
+
+/* ScaleDown effect */
+.animonItem[data-effect="scaleDown"] {
+    transform: scale(1.2);
+
+    &.is-visible {
+        transform: scale(1);
+    }
+}
