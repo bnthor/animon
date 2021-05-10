@@ -96,3 +96,31 @@ The transition duration, it must be expressed as a CSS "transition-duration" val
 ```html
 <h1 class="animonItem" data-duration="4s">
 ```
+
+### Custom effects
+
+You can skip importing the default stylesheet entirely and create your own effects. All you have to do is declare a default state and its `.is-visible` CSS properties.
+
+You may want to start with this:
+
+```css
+/* Base */
+.animonItem {
+    opacity: 0;
+    will-change: opacity, transform;
+    transition:
+        opacity 640ms 400ms cubic-bezier(0.5, 1, 0.89, 1),
+        transform 640ms 400ms cubic-bezier(0.5, 1, 0.89, 1);
+}
+.animonItem.is-visible {
+    opacity: 1;
+}
+
+/* Custom effect */
+.animonItem[data-effect="myEffect"] {
+    transform: translateY(20rem);
+}
+.animonItem[data-effect="myEffect"].is-visible {
+    transform: translateY(0);
+}
+```
