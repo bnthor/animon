@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Animon</title>
   <!-- DEMO STYLES -->
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/theme.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
   <!-- Animon styles -->
   <link rel="stylesheet" href="./dist/animon.css">
 </head>
@@ -18,67 +22,138 @@
         </a>
       </h1>
       <nav class="nav">
-        <a class="nav__item" href="#FadeInRight">FadeInRight</a>
-        <a class="nav__item" href="#ScaleUp">ScaleUp</a>
-        <a class="nav__item" href="#ScaleDown">ScaleDown</a>
-        <a class="nav__item" href="#FadeIn">FadeIn</a>
-        <a class="nav__item" href="#FadeInDown">FadeInDown</a>
-        <a class="nav__item" href="#FadeInUp">FadeInUp</a>
+        <a class="nav__item" href="#usage">Usage</a>
+        <a class="nav__item" href="#install">Installation</a>
+        <a class="nav__item" href="#options">Options</a>
+        <a class="nav__item" href="#custom">Custom effects</a>
+        <a class="nav__item" href="#roadmap">Roadmap</a>
       </nav>
     </div>
   </header>
   <main class="main">
     <section class="section" id="intro">
-      <div class="container">
-        <h1 class="animonItem">FadeInLeft effect</h1>
-        <p class="animonItem" data-delay="200">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="container flex">
+        <div class="col">
+            <h1 class="animonItem">Animate elements entering the viewport</h1>
+            <p class="animonItem" data-delay="200">Animon gets out of the way and allows you to describe animations using class names and data-attributes.</p>
+            <p class="animonItem" data-delay="200">Based on intersectionObserver, Animon weighs only <strong>0.9kb</strong>, with zero dependencies.</p>
+            <p class="animonItem" data-delay="800"><a href="#usage">Learn how to use it</a>.</p>
+        </div>
+        <div class="col">
+            <img src="./assets/braino.png" alt="" class="animonItem" data-delay="200" data-effect="scaleUp"/>
+        </div>
       </div>
     </section>
-    <section class="section" id="FadeInRight">
+    <section class="section" id="usage">
       <div class="container">
-        <h1 class="animonItem" data-effect="fadeInRight" data-duration="4s">FadeInRight effect</h1>
-        <p class="animonItem" data-effect="fadeInRight" data-delay="200" data-duration="4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h1 class="animonItem" data-effect="fadeInRight">Usage</h1>
+        <p class="animonItem" data-effect="fadeInRight" data-delay="200">Import the library and its styles from a CDN:</p>
+<pre class="animonItem" data-effect="fadeInRight"><code class="html">&lt;link rel="stylesheet" href="https://unpkg.com/animon@1.0.1/dist/animon.css"/&gt;
+&lt;script src="https://unpkg.com/animon@1.0.1/dist/animon.iife.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    Animon.animon();
+&lt;/script&gt;</code></pre>
+        <p class="animonItem" data-effect="fadeInRight" data-delay="200">Add the <em>animonItem</em> class to the elements you want to animate.</p>
+<pre class="animonItem" data-effect="fadeInRight"><code class="html">&lt;h1 class="animonItem"&gt;Hello world&lt;h1&gt;</code></pre>
+        <p class="animonItem" data-effect="fadeInRight" data-delay="200">See <a href="#options">options</a> to learn how to change the default effect, delay animation and change the animation duration.</p>
       </div>
     </section>
-    <section class="section" id="ScaleUp">
+    <section class="section" id="install">
       <div class="container">
-        <h1 class="animonItem" data-effect="scaleUp">ScaleUp effect</h1>
-        <p class="animonItem" data-delay="200" data-effect="scaleUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <h1 class="animonItem" data-effect="scaleUp">Installation</h1>
+        <p class="animonItem" data-delay="200" data-effect="scaleUp">Install the library with npm:</p>
+<pre class="animonItem" data-effect="scaleUp" data-delay="200"><code class="bash">npm install animon --save</code></pre>
+        <p class="animonItem" data-delay="200" data-effect="scaleUp">Or with yarn:</p>
+<pre class="animonItem" data-effect="scaleUp" data-delay="200"><code class="bash">yarn add animon</code></pre>
+        <h2 class="animonItem">Import as an ES module</h2>
+<pre class="animonItem" data-effect="scaleUp" data-delay="200"><code class="js">import { animon } from 'animon/dist/animon.esm.js';
+
+// Initialize it with default selector '.animonItem'
+animon();
+
+// Or with a custom selector
+animon('h1');</code></pre>
+        <h2 class="animonItem">Import as an IIFE</h2>
+<pre class="animonItem" data-effect="scaleUp" data-delay="200"><code class="html">&lt;script type="text/javascript" src="https://unpkg.com/animon@1.0.1/dist/animon.iife.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  Animon.animon();
+&lt;/script&gt;</code></pre>
       </div>
     </section>
-    <section class="section" id="ScaleDown">
+    <section class="section" id="options">
       <div class="container">
-        <h1 class="animonItem" data-effect="scaleDown">ScaleDown effect</h1>
-        <p class="animonItem" data-effect="scaleDown" data-delay="400">Nulla pharetra diam sit amet nisl suscipit adipiscing. Nec sagittis aliquam malesuada bibendum. Sed egestas egestas fringilla phasellus faucibus scelerisque. Sapien faucibus et molestie ac feugiat sed lectus. Varius sit amet mattis vulputate enim nulla. Adipiscing vitae proin sagittis nisl. Diam ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque eu tincidunt tortor aliquam nulla.</p>
+        <h1 class="animonItem" data-effect="scaleDown">Options</h1>
+        <p class="animonItem" data-effect="scaleDown" data-delay="400">By default, animon will detect all elements that has the <em>animonItem</em> classname. In addition, the library also detects three data-attributes that gives you more control:</p>
+        <h2 class="animonItem" data-effect="scaleDown" data-delay="400">Data-effect</h2>
+        <p class="animonItem" data-effect="scaleDown" data-delay="400">This is the easing function that will be used on the element entrance:</p>
+<pre class="animonItem" data-effect="scaleDown"><code class="html">&lt;h1 class="animonItem" data-effect="scaleDown"&gt;Hello world&lt;h1&gt;</code></pre>
+        <p class="animonItem" data-effect="scaleDown" data-delay="400">There's a few effects available at the moment:</p>
+        <ul class="animonItem">
+            <li class="animonItem" data-effect="fadeInRight" data-delay="500">fadeIn</li>
+            <li class="animonItem" data-effect="fadeInRight" data-delay="600">fadeInLeft (default)</li>
+            <li class="animonItem" data-effect="fadeInRight" data-delay="700">fadeInRight</li>
+            <li class="animonItem" data-effect="fadeInRight" data-delay="800">fadeInDown</li>
+            <li class="animonItem" data-effect="fadeInRight" data-delay="900">fadeInUp</li>
+            <li class="animonItem" data-effect="fadeInRight" data-delay="1000">scaleUp</li>
+            <li class="animonItem" data-effect="fadeInRight" data-delay="1100">scaleDown</li>
+        </ul>
+        <h2 class="animonItem" data-effect="scaleDown" data-delay="400">Data-delay</h2>
+        <p class="animonItem" data-effect="scaleDown" data-delay="400">Delays the entrace by <strong>x</strong> milliseconds:</p>
+<pre class="animonItem" data-effect="scaleDown"><code class="html">&lt;h1 class="animonItem" data-delay="400"&gt;Hello world&lt;h1&gt;</code></pre>
+        <h2 class="animonItem" data-effect="scaleDown" data-delay="400">Data-duration</h2>
+        <p class="animonItem" data-effect="scaleDown" data-delay="400">The transition duration, it must be expressed as a CSS "transition-duration" value (120ms, 2s etc...).</p>
+<pre class="animonItem" data-effect="scaleDown"><code class="html">&lt;h1 class="animonItem" data-duration="4s"&gt;Hello world&lt;h1&gt;</code></pre>
       </div>
     </section>
-    <section class="section" id="FadeIn">
+    <section class="section" id="custom">
       <div class="container">
-        <h1 class="animonItem" data-effect="fadeIn">FadeIn effect</h1>
-        <p class="animonItem" data-effect="fadeIn" data-delay="200">Orci ac auctor augue mauris augue neque gravida in. Euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis. Mattis molestie a iaculis at erat. Et tortor at risus viverra. Ac odio tempor orci dapibus ultrices in. At lectus urna duis convallis convallis tellus. Aliquet eget sit amet tellus cras adipiscing. Sit amet est placerat in egestas erat. Augue ut lectus arcu bibendum at varius vel pharetra vel. Nunc sed id semper risus in hendrerit gravida rutrum. Dolor sed viverra ipsum nunc aliquet bibendum enim facilisis.</p>
+        <h1 class="animonItem" data-effect="fadeIn">Custom effects</h1>
+        <p class="animonItem" data-effect="fadeIn" data-delay="200">You can skip importing the default stylesheet entirely and create your own effects. All you have to do is declare a default state and its <em>.is-visible</em> CSS properties.</p>
+        <p class="animonItem" data-effect="fadeIn" data-delay="200">ou may want to start with this:</p>
+<pre class="animonItem" data-effect="scaleDown"><code class="css">/* Base */
+.animonItem {
+    opacity: 0;
+    will-change: opacity, transform;
+    transition:
+        opacity 640ms 400ms cubic-bezier(0.5, 1, 0.89, 1),
+        transform 640ms 400ms cubic-bezier(0.5, 1, 0.89, 1);
+}
+.animonItem.is-visible {
+    opacity: 1;
+}
+
+/* Custom effect */
+.animonItem[data-effect="myEffect"] {
+    transform: translateY(20rem);
+}
+.animonItem[data-effect="myEffect"].is-visible {
+    transform: translateY(0);
+}</code></pre>
       </div>
     </section>
-    <section class="section" id="FadeInDown">
+    <section class="section" id="roadmap">
       <div class="container">
-        <h1 class="animonItem" data-effect="fadeInDown" data-delay="200">FadeInDown section</h1>
-        <p class="animonItem" data-effect="fadeInDown">Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Ut sem nulla pharetra diam sit amet nisl suscipit. Feugiat nisl pretium fusce id velit ut tortor pretium viverra. Nam at lectus urna duis convallis convallis. Ut sem nulla pharetra diam sit amet nisl suscipit. Id ornare arcu odio ut sem nulla. Etiam dignissim diam quis enim lobortis scelerisque fermentum dui. Imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor. Eget arcu dictum varius duis. Accumsan sit amet nulla facilisi.</p>
-      </div>
-    </section>
-    <section class="section" id="FadeInUp">
-      <div class="container">
-        <h1 class="animonItem" data-effect="fadeInUp">FadeInUp effect</h1>
-        <p class="animonItem" data-effect="fadeInUp" data-delay="200">Nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit. Ornare lectus sit amet est placerat in egestas erat. Tristique nulla aliquet enim tortor. Non odio euismod lacinia at. Vestibulum morbi blandit cursus risus at. Orci eu lobortis elementum nibh tellus molestie nunc non blandit. Porta non pulvinar neque laoreet suspendisse interdum consectetur.</p>
+        <h1 class="animonItem" data-effect="fadeInDown" data-delay="200">Roadmap</h1>
+        <p class="animonItem" data-effect="fadeInDown" data-delay="200">Animon is under development but will remain simple. Its simplicity make it suitable for the most basic needs (landing pages, slides etc...). Though I have a few things in mind to improve it:</p>
+        <ul class="animonItem">
+            <li class="animonItem" data-effect="fadeInRight" data-delay="500">More effects</li>
+            <li class="animonItem" data-effect="fadeInRight" data-delay="600">Legacy browsers support</li>
+            <li class="animonItem" data-effect="fadeInRight" data-delay="700">A "letter by letter" effect</li>
+            <li class="animonItem" data-effect="fadeInRight" data-delay="700">Option to animate elements only once</li>
+        </ul>
       </div>
     </section>
   </main>
   <footer class="footer">
-    <div class="container animonItem">Made with love by me</div>
+    <div class="container animonItem">Made with love by <a href="https://github.com/bnthor" target="_blank">bnthor</a></div>
   </footer>
   <script type="module">
     // Import animon
     import { animon } from './dist/animon.esm.js';
     // Initialize it with default selector
     animon();
+    // HLJS
+    hljs.highlightAll();
   </script>
 </body>
 </html>
