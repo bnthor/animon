@@ -1,6 +1,6 @@
 # Animon
 
-A simple way to animate DOM elements when they enter the viewport. [See the demo](https://bnthor.github.io/animon/)
+A simple way to animate DOM elements when they enter the viewport. [See the demo](https://bnthor.github.io/animon-site/)
 
 ## Installation
 
