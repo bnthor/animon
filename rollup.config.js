@@ -10,7 +10,7 @@ export default [{
       format: 'cjs'
     },
     {
-      file: 'dist/animon.esm.js',
+      file: 'dist/animon.js',
       format: 'es'
     },
     {

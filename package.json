@@ -2,8 +2,7 @@
   "name": "animon",
   "version": "1.0.3",
   "description": "Animate DOM elements when they appear in the viewport",
-  "main": "dist/animon.cjs.js",
-  "module": "dist/animon.esm.js",
+  "main": "dist/animon.js",
   "scripts": {
     "build": "postcss src/animon.pcss -o dist/animon.css && rollup -c",
     "prepublish": "npm run build"
