@@ -19,7 +19,7 @@ yarn add animon
 Add animon styles from a CDN:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/animon/dist/animon.css"/>
+<link rel="stylesheet" href="https://unpkg.com/animon/dist/animon.css" />
 ```
 
 ## Usage
@@ -30,23 +30,26 @@ Add animon styles from a CDN:
 
 ```js
 // From node_modules
-import { animon } from 'animon';
+import { animon } from "animon";
 // OR from a CDN
-import { animon } from 'https://unpkg.com/animon';
+import { animon } from "https://unpkg.com/animon";
 
 // Initialize it with default selector
 animon();
 
 // Or with a custom selector
-animon('h1');
+animon("h1");
 ```
 
 #### As an IIFE
 
 ```html
-<script type="text/javascript" src="https://unpkg.com/animon/dist/animon.iife.js"></script>
+<script
+    type="text/javascript"
+    src="https://unpkg.com/animon/dist/animon.iife.js"
+></script>
 <script type="text/javascript">
-  Animon.animon();
+    Animon.animon();
 </script>
 ```
 
@@ -73,20 +76,20 @@ This is the easing function that will be used on the element entrance:
 
 There's a few effects available at the moment:
 
-- fadeIn
-- fadeInLeft (default)
-- fadeInRight
-- fadeInDown
-- fadeInUp
-- scaleUp
-- scaleDown
+-   fadeIn
+-   fadeInLeft (default)
+-   fadeInRight
+-   fadeInDown
+-   fadeInUp
+-   scaleUp
+-   scaleDown
 
 #### Data-delay
 
 Delays the entrace by `x` milliseconds:
 
 ```html
-<h1 class="animonItem" data-delay="800">
+<h1 class="animonItem" data-delay="800"></h1>
 ```
 
 #### Data-duration
@@ -94,7 +97,15 @@ Delays the entrace by `x` milliseconds:
 The transition duration, it must be expressed as a CSS "transition-duration" value (120ms, 2s etc...).
 
 ```html
-<h1 class="animonItem" data-duration="4s">
+<h1 class="animonItem" data-duration="4s"></h1>
+```
+
+#### Data-run-once
+
+Prevent animation from being run every time the element appears in the viewport.
+
+```html
+<h1 class="animonItem" data-run-once></h1>
 ```
 
 ### Custom effects
@@ -108,9 +119,8 @@ You may want to start with this:
 .animonItem {
     opacity: 0;
     will-change: opacity, transform;
-    transition:
-        opacity 640ms 400ms cubic-bezier(0.5, 1, 0.89, 1),
-        transform 640ms 400ms cubic-bezier(0.5, 1, 0.89, 1);
+    transition: opacity 640ms 400ms cubic-bezier(0.5, 1, 0.89, 1), transform
+            640ms 400ms cubic-bezier(0.5, 1, 0.89, 1);
 }
 .animonItem.is-visible {
     opacity: 1;
